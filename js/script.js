@@ -130,7 +130,6 @@ $(document).ready(function() {
     console.log('returned band is ', recBand);
     return recBand || err;
   }
-
   // get Cup Size via frequency
   function recommendedCup() {
     var givenCup = currentSize[1];
@@ -156,7 +155,6 @@ $(document).ready(function() {
       return recCup;
     }
   }
-
   //give recommended size
   function giveRecSize(recBand, recCup) {
     var size, cupIdx;
