@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
 var sizeSchema = new mongoose.Schema ({
-  currentSize: {
+  currentBandSize: String,
+  currentCupSize: String,
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
