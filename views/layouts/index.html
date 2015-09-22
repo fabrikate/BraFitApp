@@ -13,8 +13,7 @@
     <p>What is your current Bra Size?</p>
     <form>
       <label for='bandSize'>Band:</label>
-      <select id='bandSize'>
-        <option>select a size:</option>
+      <select id='bandSize' required>
         <option>30</option>
         <option>32</option>
         <option>34</option>
@@ -26,7 +25,7 @@
         <option>46</option>
       </select>
       <label for='cupSize'>Cup</label>
-      <select id='cupSize'>
+      <select id='cupSize' required>
         <option>A</option>
         <option>B</option>
         <option>C</option>
@@ -61,15 +60,15 @@
     <p>Where does your bra band currently sit? </p>
     <form id='question3'>
       <input type='radio' id='highBand' name='answer' value='High' />
-      <img src='' alt='high bra band' />
+      <img height='150px' width='150px' src='http://lingeriebriefs.com/wp-content/uploads/2013/03/5-Band-too-large-c.jpg' alt='high bra band' />
       <label for='highBand'>High, on my shoulder blades.</label>
 
       <input type='radio' id='lowerBack' name='answer' value='Low' />
-      <img src='' alt='low bra band'
+      <img height='150px' width='150px' src='http://3.bp.blogspot.com/-auyMk2vBOMM/T0QFd4TudjI/AAAAAAAAAZg/LyvUI4M6q1Y/s1600/Playtex38A.jpg' alt='low bra band'
       <label for='lowerBack'>Low, far below my shoulder blades.</label>
 
       <input type='radio' id='underBlades' name='answer' value='Correct' />
-      <img src='' alt='bra band'
+      <img height='150px' width='150px' src='http://blog.panache-lingerie.com/wp-content/uploads/2013/04/1-Correct-band.jpg' alt='bra band'
       <label for='underBlades'>Just under my shoulder blades.</label>
       <button>Next</button>
     </form>
@@ -124,13 +123,16 @@
     <p>Do your cups runeth over?</p>
     <form id='question7'>
       <input type='radio' id='cupTopGap' name='answer' value='cupTopGap' />
-      <label for='cupTopGap'>No, but there is a gap between the cup and me.</label>
+      <label for='cupTopGap'>No, but theres a gap between the cup and me.</label>
 
       <input type='radio' id='cupDoubleBubble' name='answer' value='cupDoubleBubble' />
       <label for='cupDoubleBubble'>Yes, I run over the top of the cup.</label>
 
       <input type='radio' id='cupTopRunsFlat' name='answer' value='cupTopRunsFlat' />
-      <label for='cupTopRunsFlat'>The cup lies flat, no gap and no overflow.</label>
+      <label for='cupTopRunsFlat'>No gaps, no overflow</label>
+
+      <input type='radio' id='cupBtmGap' name='answer' value='cupBtmGap' />
+      <label for='cupBtmGap'> Cup gaps at the bottoms
       <button>Next</button>
     </form>
   </div>
