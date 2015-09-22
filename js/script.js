@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-  var answers = [];
   var $questions = $('.surveyQ');
   function grabQuestion(num) {
     $($questions).hide();
@@ -47,9 +46,15 @@ $(document).ready(function() {
   })
   $('#quest7').on('click', 'button', function(e) {
     e.preventDefault();
-    var question7Ans = $('input:checked').val();
+    var question7Ans = $('#question7 input:checked').val();
     console.log(question7Ans);
     grabQuestion(7);
+  })
+  $('#quest8').on('click', 'button', function(e) {
+    e.preventDefault();
+    var question8Ans = $('#quest8 input:checked').val();
+    console.log(question8Ans);
+    grabQuestion(8);
   })
 
   grabQuestion(0);
