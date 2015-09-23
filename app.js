@@ -6,6 +6,7 @@ var bodyParser = require('body-Parser');
 var mongoose = require('mongoose');
 var session = require('cookie-session');
 var bcrypt = require('bcrypt');
+var request = require('request');
 db = require('./models');
 loginMiddleware = require('./middleware/loginHelper');
 routeMiddleware = require('./middleware/routeHelper');

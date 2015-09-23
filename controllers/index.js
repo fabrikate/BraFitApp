@@ -1,3 +1,4 @@
+// controllers - index. Signup, Login and Logout route
 app.get('/', function(req, res) {
   res.redirect('/wishlist');
 });
@@ -6,23 +7,23 @@ require('./brand');
 
 //sign up routes
 app.get('/signup', routeMiddleware.preventLoginSignup, function(req, res) {
-  res.render('signup') //TODO: When they sign up where do they go
+  res.render('user/signup')
 });
 app.post('/signup', function(req, res) {
   var newUser = req.body.user;
   db.User.create(newUser, function(err, user) {
     if(user) {
       req.login(user);
-      res.redirect('signup') //TODO: When they are signedup and logined where do they go
+      res.redirect('login')
     } else {
-      res.render
+      res.render('user/signup')
     }
   });
 });
 
 //login routes
 app.get('/login', routeMiddleware.preventLoginSignup, function(req, res) {
-  res.render('login');
+  res.render('user/login');
 });
 app.post('/login', function(req, res) {
   db.User.authenticate(req.body.user, function(err, user) {
@@ -30,7 +31,7 @@ app.post('/login', function(req, res) {
       req.login(user);
       res.redirect('/wishlist');
     } else {
-      res.render('login', console.log('Error is: ', err));
+      res.render('user/login', console.log('Error is: ', err));
     }
   });
 });

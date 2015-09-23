@@ -1,6 +1,7 @@
 // size survey routes
-var db = require('./models/index');
-
+app.get('/survey', function(req, res) {
+  res.render('survey/index');
+})
 // index
 
 //start survey
