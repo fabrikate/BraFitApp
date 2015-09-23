@@ -3,7 +3,7 @@ $(document).ready(function() {
   var curCup;
   var currentSize = [];
   var $questions = $('.surveyQ');
-  var cupSizes = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+  var cupSizes = ['A', 'B', 'C', 'D', 'DD / E', 'DDD / F', 'DDDD / G', 'DDDDD / H', 'I'];
   var inchesToBandMeasurement = {
     '27-29"': 32,
     '29-32"': 34,
@@ -45,11 +45,13 @@ $(document).ready(function() {
     var question3Ans = $('#question3 input:checked').val();
     if(question3Ans === 'High') {
       currentSize.push(eval(currentSize[0] - 2));
+    } else {
+      currentSize.push(currentSize[0]);
     }
     console.log(currentSize);
     grabQuestion(3);
   })
-  // wire pain in wire
+  // wire pain in wire TODO: undefined error
   $('#quest4').on('click', 'button', function(e) {
     e.preventDefault();
     curCup = cupSizes.indexOf(currentSize[1]);
@@ -116,10 +118,13 @@ $(document).ready(function() {
     var recBand, sum, err= 'error';
     var givenBand = parseInt(currentSize[0]);
     console.log(givenBand);
-    if (typeof currentSize[6] !== 'string') {
+    if (typeof currentSize[6] !== 'string' && currentSize[6] !== undefined) {
       avg = (givenBand + currentSize[2] + currentSize[3] + currentSize[6]) / 4;
+      console.log('number avg nums are: ', givenBand, currentSize[2], currentSize[3], currentSize[6]);
+      console.log('number index avg is: ', avg);
     } else if (typeof currentSize[6] === 'string') {
       avg = (givenBand + currentSize[2] + currentSize[3]) / 3;
+      console.log('string index avg is: ', avg);
     } else {
       console.log('Error')
     }
@@ -173,6 +178,7 @@ $(document).ready(function() {
       console.log(size);
       return size;
     }
+    $('#result').append('<h3>Your size is: ' + size + '</h3>');
   }
 
 })
