@@ -44,9 +44,9 @@ $(document).ready(function() {
     e.preventDefault();
     var question3Ans = $('#question3 input:checked').val();
     if(question3Ans === 'High') {
-      currentSize.push(eval(currentSize[0] - 2));
+      currentSize.push(parseInt(currentSize[0]) - 2);
     } else {
-      currentSize.push(currentSize[0]);
+      currentSize.push(parseInt(currentSize[0]));
     }
     console.log(currentSize);
     grabQuestion(3);
@@ -166,19 +166,21 @@ $(document).ready(function() {
     if (currentSize[0] > recBand) {
       cupIdx = cupSizes.indexOf(recCup);
       size = recBand + cupSizes[cupIdx + 1];
+      $('#result').append('<h3>Your size is: ' + size + '</h3>');
       console.log(size);
       return size;
     } else if(currentSize[0] < recBand) {
       cupIdx = cupSizes.indexOf(recCup);
       size = recBand + cupSizes[cupIdx - 1];
       console.log(size);
+      $('#result').append('<h3>Your size is: ' + size + '</h3>');
       return size;
     } else {
       size = recBand + recCup;
       console.log(size);
+      $('#result').append('<h3>Your size is: ' + size + '</h3>');
       return size;
     }
-    $('#result').append('<h3>Your size is: ' + size + '</h3>');
   }
 
 })

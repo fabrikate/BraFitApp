@@ -1,4 +1,4 @@
-var db = require('../models');
+db = require('../models');
 
 var loginHelpers = function(req, res, next) {
   req.login = function (user) {
