@@ -3,7 +3,7 @@ var questionOne =
     "<p>What is your current Bra Size?</p>" +
     "<form>" +
       "<label for='bandSize'>Band:</label>" +
-      "<select id='bandSize'>" +
+      "<select id='bandSize' required>" +
         "<option>30</option>" +
         "<option>32</option>" +
         "<option>34</option>" +
@@ -15,7 +15,7 @@ var questionOne =
         "<option>46</option>" +
       "</select>" +
       "<label for='cupSize'>Cup</label>" +
-      "<select id='cupSize'>" +
+      "<select id='cupSize' required>" +
         "<option>A</option>" +
         "<option>B</option>" +
         "<option>C</option>" +

@@ -24,23 +24,22 @@ $(document).ready(function() {
   function loadQuestionOne() {
     //load templates from handlebars
     $('#templateContent').hide();
-    $.get('/survey').done(function(data) {
+    $.get('/survey').done(function() {
       var html = questionOne + questionTwo + questionThree + questionFour + questionFive
       + questionSix + questionSeven + questionEight;
       $('body').append(html);
       // only show the question you want answered
       $('#quest2').hide();
-      $('#quest3').hide();
-      $('#quest4').hide();
-      $('#quest5').hide();
-      $('#quest6').hide();
-      $('#quest7').hide();
-      $('#quest8').hide();
+      // $('#quest3').hide();
+      // $('#quest4').hide();
+      // $('#quest5').hide();
+      // $('#quest6').hide();
+      // $('#quest7').hide();
+      // $('#quest8').hide();
     });
-    $('#quest1Btn').on('click', function() {
+    $('button').on('click', function() {
       $('#quest1').hide();
       $('#quest2').fadeIn();
-
     });
   }
 

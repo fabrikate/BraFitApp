@@ -1,6 +1,6 @@
 // size survey routes
 app.get('/survey', function(req, res) {
-  res.render('survey/index');
+  res.sendFile(path.join(__dirname + '../../views/layouts/index.html'));
 })
 // index
 

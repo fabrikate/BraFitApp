@@ -8,12 +8,14 @@ var session = require('cookie-session');
 var bcrypt = require('bcrypt');
 var request = require('request');
 db = require('./models');
+path = require('path');
 loginMiddleware = require('./middleware/loginHelper');
 routeMiddleware = require('./middleware/routeHelper');
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'))
 app.set('views', __dirname + '/views/');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
