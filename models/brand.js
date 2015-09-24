@@ -2,7 +2,11 @@ var mongoose = require('mongoose');
 
 var brandSchema = new mongoose.Schema({
   brandName: String,
-  popularStyles: [String],
+  popularStyle: String,
+  wishListStyles: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'wishListStyles'
+  },
 });
 
 var Brand = mongoose.model('Brand', brandSchema);

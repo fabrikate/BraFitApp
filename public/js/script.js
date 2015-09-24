@@ -178,7 +178,7 @@ $(document).ready(function() {
     } else {
       size = recBand + recCup;
       console.log(size);
-      $('#result').append('<h3>Your size is: ' + size + '</h3>');
+      $('#result').append('<h3>Your size is: ' + size + '</h3>' + '<input type="hidden" id="braSize" value="' + size + '" />');
       return size;
     }
   }

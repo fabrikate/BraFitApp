@@ -10,9 +10,9 @@ var userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'currentSize'
   },
-  brandPreferences: [{
+  wishList: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'brandNamePref'
+    ref: 'wishListStyles'
   }]
 })
 

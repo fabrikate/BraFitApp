@@ -1,9 +1,10 @@
+require('./size');
+require('./brand');
+require('./wishlist');
 // controllers - index. Signup, Login and Logout route
 app.get('/', function(req, res) {
   res.redirect('/wishlist');
 });
-require('./size');
-require('./brand');
 
 //sign up routes
 app.get('/signup', routeMiddleware.preventLoginSignup, function(req, res) {
@@ -11,6 +12,8 @@ app.get('/signup', routeMiddleware.preventLoginSignup, function(req, res) {
 });
 app.post('/signup', function(req, res) {
   var newUser = req.body.user;
+
+  console.log(newUser);
   db.User.create(newUser, function(err, user) {
     if(user) {
       req.login(user);
@@ -26,9 +29,11 @@ app.get('/login', routeMiddleware.preventLoginSignup, function(req, res) {
   res.render('user/login');
 });
 app.post('/login', function(req, res) {
+  console.log('login post route');
   db.User.authenticate(req.body.user, function(err, user) {
     if(!err && user !== null) {
       req.login(user);
+      console.log('user is: ',user);
       res.redirect('/wishlist');
     } else {
       res.render('user/login', console.log('Error is: ', err));
