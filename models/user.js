@@ -12,7 +12,7 @@ var userSchema = new mongoose.Schema({
   },
   wishList: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'wishListStyles'
+    ref: 'wishList'
   }]
 })
 
