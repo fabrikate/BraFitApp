@@ -10,20 +10,6 @@ app.get('/wishlist', function(req, res) {
   });
 });
 
-
-// app.get('/wishlist', function(req, res) {
-//   db.wishList.find({}, function (err, list) {
-//     if (err) {
-//       console.log('Error is: ', err);
-//     } else {
-//       console.log('wList is: ', list[0].user);
-//       db.User.findById(req.session.id, function(err, user) {
-//         console.log('user is: ', user)
-//         res.render('wishlist/index', {userName: user.email, bras: user.wishList});
-//       })
-//
-
-
 //CREATE
 app.get('/wishlist/new', function(req, res) {
   res.render('wishlist/new');
@@ -60,7 +46,7 @@ app.delete('/wishlist/:id', function(req, res) {
       res.redirect('404');
     }
     else {
-      res.redirect('/wishlist', {bras: style});
+      res.redirect('/wishlist');
     }
   })
 })
