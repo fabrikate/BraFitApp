@@ -67,3 +67,14 @@ app.delete('/wishlist/:id', function(req, res) {
     }
   })
 })
+
+//SEARCH VIA NORDSTROM
+app.get('/wishlist/search', function(req, res) {
+  var search = req.query.searchNordy;
+  console.log('request query: ', req.query.searchNordy);
+  var url = "http://shop.nordstrom.com/sr?origin=keywordsearch&contextualcategoryid=0&keyword=" + search;
+  request.get(url, function (err, resp, body) {
+    console.log('Json parsed body: ', body);
+  })
+  res.render('wishlist/searchResults');
+})
