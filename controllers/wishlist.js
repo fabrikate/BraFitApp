@@ -19,9 +19,9 @@ app.post('/wishlist', function(req, res) {
   var newStyle = req.body.search;
   console.log(newStyle);
   db.wishList.create({
-    brandName: req.body.search.brand,
-    brandStyle: req.body.search.style,
-    size: req.body.search.size}, function(err, style) {
+    brandName: req.body.bra.brand,
+    brandStyle: req.body.bra.style,
+    size: req.body.bra.size}, function(err, style) {
     if(err) {
       console.log(err);
     } else {
@@ -35,6 +35,23 @@ app.post('/wishlist', function(req, res) {
       })
     }
   })
+});
+
+//EDIT
+app.get('/wishlist/:id/edit', function(req, res) {
+  db.wishList.findById(req.params.id, function(err, data) {
+    res.render('wishList/edit', data);
+  });
+});
+
+app.put('/wishlist/:id', function(req, res) { //TODO: bug, edit creates a new one, not edit an existing id
+  db.wishList.findByIdAndUpdate(req.params.id, req.body.bra, function(err, bra) {
+    if(err) {
+      console.log('Error is: ', err);
+    } else {
+      res.redirect('/wishlist');
+    }
+  });
 });
 
 // DELETE

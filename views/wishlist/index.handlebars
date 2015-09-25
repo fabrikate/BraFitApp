@@ -9,7 +9,7 @@
       <th>Brand</th>
       <th>Style</th>
       <th>Size</th>
-
+      <th>Edit</th>
       <th>Remove</th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
       <td>{{brandName}}</td>
       <td>{{brandStyle}}</td>
       <td>{{size}}</td>
-
+      <td><a href='/wishlist/{{id}}/edit'>√</a></td>
       <td><form action='/wishlist/{{id}}/?_method=delete' method='POST'><button>x</button></form></td>
     </tr>
     {{/each}}

@@ -1,0 +1,11 @@
+<h2>Edit a Bra</h2>
+<p>It is normal to change sizes with certain bras. If you find you need a different size change it here.</p>
+
+<form action='/wishlist?_method="put"' method='POST'>
+  <input type='text' name='bra[brand]' value={{brandName}} />
+  <input type='text' name='bra[style]' value={{brandStyle}} />
+  <input type='text' name='bra[size]'  value={{size}} />
+  <input type='submit' value='Change'/>
+</form>
+
+<a href='/wishlist'>Go back to wishlist</a>
