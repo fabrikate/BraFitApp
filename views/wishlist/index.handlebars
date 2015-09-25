@@ -1,12 +1,30 @@
 <h2>Bra Wish list</h2>
 <p>Content will go here</p>
-<a href='/logout'>Log out </a>
 <a href='/survey'>Survey </a>
-
 <a href='/wishlist/new'>Add a Bra to your wishlist </a>
-<ul> {{#each bras}}
-    <li>{{wishListStyle}}</li>
-</ul>{{/each}}
+<p>User: {{userName}}</p>
+<table>
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Style</th>
+      <th>Size</th>
+      <th>id</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each bras}}
+    <tr>
+      <td>{{brandName}}</td>
+      <td>{{brandStyle}}</td>
+      <td>{{size}}</td>
+      <td>{{id}}</td>
+      <td><form action='/wishlist/{{bras._id}}/?_method=delete' method='POST'><button>x</button></form></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
 
 
 <script>
