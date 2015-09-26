@@ -169,25 +169,14 @@
       <label for='dunno'>I don't know / care</label>
       <button>Next</button>
     </form>
+    <form action='/' method='POST'>
+      <input type='hidden' name='result' id='inputResult' />
+      <input type='text' name='size' id='braSizeResult' />
+      <input type='submit' value='Continue' />
+    </form>
     <p id='result'></p>
   </div>
 
-  <!-- <div id='searchEngine'>
-    <p>SearchEngine</p>
-    <script>
-  (function() {
-    var cx = '011253441330498667417:mrhvtbzrjb8';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
-  </div> -->
 <a href='/wishlist'>Go To Wish List </a>
 <a href='/logout'>Log out </a>
 </body>

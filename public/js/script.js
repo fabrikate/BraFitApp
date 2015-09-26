@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   var curCup;
+  var size, cupIdx;
   var currentSize = [];
   var $questions = $('.surveyQ');
   var cupSizes = ['A', 'B', 'C', 'D', 'DD / E', 'DDD / F', 'DDDD / G', 'DDDDD / H', 'I'];
@@ -162,10 +163,11 @@ $(document).ready(function() {
   }
   //give recommended size
   function giveRecSize(recBand, recCup) {
-    var size, cupIdx;
+
     if (currentSize[0] > recBand) {
       cupIdx = cupSizes.indexOf(recCup);
       size = recBand + cupSizes[cupIdx + 1];
+      $('#inputResult').innerHTML = size;
       $('#result').append('<h3>Your size is: ' + size + '</h3>');
       console.log(size);
       return size;
@@ -173,14 +175,22 @@ $(document).ready(function() {
       cupIdx = cupSizes.indexOf(recCup);
       size = recBand + cupSizes[cupIdx - 1];
       console.log(size);
+      $('#inputResult').innerHTML = size;
       $('#result').append('<h3>Your size is: ' + size + '</h3>');
       return size;
     } else {
       size = recBand + recCup;
       console.log(size);
-      $('#result').append('<h3>Your size is: ' + size + '</h3>' + '<input type="hidden" id="braSize" value="' + size + '" />');
+      $('#inputResult').innerHTML = size;
+      $('#result').append('<h3>Your size is: ' + size + '</h3>');
       return size;
     }
   }
+
+  $.ajax({
+    'POST'
+    to a /size site that I wont use but at least I can get the information.
+  })
+
 
 })
