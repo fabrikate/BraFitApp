@@ -4,7 +4,7 @@ $(document).ready(function() {
   var size, cupIdx;
   var currentSize = [];
   var $questions = $('.surveyQ');
-  var cupSizes = ['A', 'B', 'C', 'D', 'DD / E', 'DDD / F', 'DDDD / G', 'DDDDD / H', 'I'];
+  var cupSizes = ['A', 'B', 'C', 'D', 'DD-E', 'DDD-F', 'DDDD-G', 'DDDDD-H', 'I'];
   var inchesToBandMeasurement = {
     '27-29"': 32,
     '29-32"': 34,
@@ -111,6 +111,7 @@ $(document).ready(function() {
     var question8Ans = $('#quest8 input:checked').val();
     console.log(question8Ans);
     giveRecSize(recommendedBand(), recommendedCup());
+    loadAjax();
   })
   grabQuestion(0);
 
@@ -186,11 +187,19 @@ $(document).ready(function() {
       return size;
     }
   }
-
-  $.ajax({
-    'POST'
-    to a /size site that I wont use but at least I can get the information.
-  })
-
-
+  function loadAjax(){
+    $.ajax({
+      method: 'POST',
+      url: '/size/' + size,
+      dataType: 'text',
+      success: function(data) {
+        alert(data);
+        console.log('ajax data is: ', data);
+      },
+      error: function (err) {
+        alert(err.responseText);
+        console.log('Error is: ', err);
+      }
+    });
+  }
 })
