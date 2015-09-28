@@ -69,6 +69,7 @@ input .gsc-input {
   background-color: #B7BDC5;
   border: 8px solid #F0735C;
   padding: 5px 5px;
+  padding-bottom: 15px;
 }
 
 h1, h2, h3 {

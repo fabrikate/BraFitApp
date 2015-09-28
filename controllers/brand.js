@@ -7,7 +7,6 @@ app.get('/brandInfo', function (req, res) {
     if(err) {
       console.log('Error is: ', err);
     } else {
-      console.log('the brands are: ', brands);
       res.render('brand/index', {brand: brands})
     }
   })
