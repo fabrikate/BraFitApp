@@ -3,7 +3,6 @@ require('./brand');
 require('./wishlist');
 // controllers - index. Signup, Login and Logout route
 app.get('/', function(req, res) {
-  console.log(req.body);
   res.redirect('/wishlist');
 });
 

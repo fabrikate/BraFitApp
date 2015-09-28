@@ -1,7 +1,7 @@
 var express = require('express');
 app = express();
 var exphbs = require('express-handlebars');
-var methodOverride = require('method-Override');
+var methodOverride = require('method-override');
 var bodyParser = require('body-Parser');
 var mongoose = require('mongoose');
 var session = require('cookie-session');
