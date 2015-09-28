@@ -4,16 +4,6 @@
   font-size: 18px;
 }
 
-#background {
-  z-index: -50;
-  position: fixed;
-  opacity: 0.9;
-  top: -10%;
-  left: -10%;
-  width: 140%;
-  height: 120%;
-}
-
 aside {
   height: 110%;
   width: 10%;
@@ -50,16 +40,6 @@ a:hover {
   color: #4B1A32;
 }
 
-div.gsc-control-cse {
-  background-color: #B7BDC5;
-  border: #B7BDC5;
-}
-
-input .gsc-input {
-  background-color: #F0735C;
-  color: #4B1A32;
-}
-
 #templateContent {
   text-align: center;
   width: 70%;
@@ -72,10 +52,15 @@ input .gsc-input {
 }
 
 h1, h2, h3 {
+  width: 70%;
+  background-color: #B7BDC5;
+  border: 5px solid #F0735C;
   text-align: center;
   font-family: Pacifico, cursive;
   font-size: 38px;
   color: #4B1A32;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 table {
@@ -85,6 +70,7 @@ table {
 
 #header {
   font-size: 52px;
+  font-family: Pacifico, cursive;
 }
 
 #braGirls {
@@ -100,4 +86,24 @@ button {
   border-radius: 30px;
   color: #F0735C;
   padding: 8px;
+}
+
+#background {
+  z-index: -50;
+  position: fixed;
+  opacity: 0.9;
+  top: -10%;
+  left: -10%;
+  width: 140%;
+  height: 120%;
+}
+
+.surveyQ {
+  background-color: #B7BDC5;
+  border: 5px solid #F0735C;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 8px 8px;
+  text-align: center;
 }

@@ -5,17 +5,28 @@
   <title>Fit Guide </title>
   <script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js'></script>
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico|Nixie+One' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src='https://code.jquery.com/jquery-2.1.4.js'></script>
   <script type="text/javascript" src='../../js/script.js'></script>
 </head>
 <body>
-  <img alt='background' id='background' src='/img/whiteGoldSixAgon.jpg'>
-  <h1>Your Personal Fit Guide</h1>
+  <img alt='background' id='background' src='/img/whiteGoldSixAgon.jpg' />
+  <aside id='navBar'>
+    <img alt='braGirls' id='braGirls' src='/img/braGirls.jpg' />
+    <a href='/survey'>Survey</a>
+    <br />
+    <a href='/wishlist'>Wish List</a>
+    <br />
+    <a href='/logout'>Log out</a>
+    <br />
+    <a href='/brandInfo'>Brand Maintenance</a>
+    <br />
+  </aside>
   <div id='content' class='container-fluid'></div>
-  <div id='templateContent'>
+  <div id='templateContent' class='col-md-10'>
+  <h1 id='header'>Your Personal Fit Guide</h1>
   {{{body}}}
   </div>
-  <a href='/logout'>Log out</a>
 </body>
 </html>
 
