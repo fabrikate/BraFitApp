@@ -38,7 +38,6 @@ app.get('/wishlist/:id/edit', function(req, res) {
 });
 
 app.put('/wishlist/:id', function(req, res) {
-  console.log('put! works');
   console.log('req.body.bra is: ', req.body.bra);
   db.wishList.findByIdAndUpdate(req.params.id, req.body.bra, function(err, bra) {
     if(err) {
