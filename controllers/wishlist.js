@@ -40,7 +40,7 @@ app.post('/wishlist', function(req, res) {
 //EDIT
 app.get('/wishlist/:id/edit', function(req, res) {
   db.wishList.findById(req.params.id, function(err, data) {
-    res.render('wishList/edit', data);
+    res.render('wishlist/edit', data);
   });
 });
 
