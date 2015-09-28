@@ -32,6 +32,6 @@ app.use(loginMiddleware);
 
 require('./controllers/index');
 
-app.listen(3000, function() {
-  console.log('Server running on localhost 3000');
+app.listen( process.env.PORT || 3000, function() {
+  console.log('Server running on ' + process.env.PORT + ' or on localhost 3000');
 });
