@@ -107,3 +107,15 @@ button {
   padding: 8px 8px;
   text-align: center;
 }
+
+.surveyImg {
+  border: 3px solid #F0735C;
+  border-radius: 80px;
+}
+
+button {
+  background-color: #4B1A32;
+  border-radius: 30px;
+  color: #F0735C;
+  padding: 8px;
+}

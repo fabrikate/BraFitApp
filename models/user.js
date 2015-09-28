@@ -6,7 +6,7 @@ var SALT_WORK_FACTOR = 10;
 var userSchema = new mongoose.Schema({
   email: String,
   password: String,
-  braSize: [String],
+  braSize: String,
   currentSize: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'currentSize'

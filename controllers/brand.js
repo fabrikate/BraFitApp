@@ -1,14 +1,14 @@
 db = require('../models/index');
 
 // add styles to brand database
+
 app.get('/brandInfo', function (req, res) {
   db.Brand.find({}, function(err, brands) {
     if(err) {
       console.log('Error is: ', err);
     } else {
-      console.log(brands);
+      console.log('the brands are: ', brands);
       res.render('brand/index', {brand: brands})
-
     }
   })
 })

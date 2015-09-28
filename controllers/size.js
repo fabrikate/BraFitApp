@@ -19,7 +19,7 @@ app.post('/size/:size', function(req, res) {
   console.log('post ', userSize);
   console.log('user is: ', req.session);
   db.User.findById(req.session.id, function(err, user) {
-    user.braSize.push(userSize);
+    user.braSize = userSize;
     user.save();
   })
 })

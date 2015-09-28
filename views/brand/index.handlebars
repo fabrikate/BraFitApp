@@ -1,18 +1,26 @@
 <h2>Brand Info</h2>
-<p>Which Brands / Styles are the best?</p>
+<p>You know your size, but what bras are the best?</p>
+<p>These styles from each brand are the best. Take a look, then search via name or size below to purchase</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Brand </th>
-      <th>Popular Styles </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr> {{# each brands}}
-      <td>{{brandName}}</td>
-      <td>{{popularStyle}}</td>
-    </tr> {{/each}}
-  </tbody>
-</table>
+{{# each brand}}
+<ul><h4>{{brandName}}</h4>
+  <li>Top Styles: {{popularStyles}}</li>
+  <li>Size Range: {{sizeRange}}</li>
+</ul>
+{{/ each}}
 
+<div id='googleSearch'>
+  <script>
+    (function() {
+      var cx = '011253441330498667417:mrhvtbzrjb8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <gcse:search></gcse:search>
+</div>

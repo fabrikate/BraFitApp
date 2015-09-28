@@ -106,7 +106,7 @@ $(document).ready(function() {
     grabQuestion(7);
   })
   // brand preferences
-  $('#quest8').on('click', 'button', function(e) {
+  $('#quest8Btn').one('click', function(e) {
     e.preventDefault();
     var question8Ans = $('#quest8 input:checked').val();
     console.log(question8Ans);
@@ -168,6 +168,9 @@ $(document).ready(function() {
     if (currentSize[0] > recBand) {
       cupIdx = cupSizes.indexOf(recCup);
       size = recBand + cupSizes[cupIdx + 1];
+      if (size[0] === 'E') {
+        alert('Error, Please retake the Survey.');
+      }
       $('#inputResult').innerHTML = size;
       $('#result').append('<h3>Your size is: ' + size + '</h3>');
       console.log(size);
@@ -175,12 +178,18 @@ $(document).ready(function() {
     } else if(currentSize[0] < recBand) {
       cupIdx = cupSizes.indexOf(recCup);
       size = recBand + cupSizes[cupIdx - 1];
+      if (size[0] === 'E') {
+        alert('Error, Please retake the Survey.');
+      }
       console.log(size);
       $('#inputResult').innerHTML = size;
       $('#result').append('<h3>Your size is: ' + size + '</h3>');
       return size;
     } else {
       size = recBand + recCup;
+      if (size[0] === 'E') {
+        alert('Error, Please retake the Survey.');
+      }
       console.log(size);
       $('#inputResult').innerHTML = size;
       $('#result').append('<h3>Your size is: ' + size + '</h3>');
@@ -193,13 +202,13 @@ $(document).ready(function() {
       url: '/size/' + size,
       dataType: 'text',
       success: function(data) {
-        alert(data);
         console.log('ajax data is: ', data);
       },
       error: function (err) {
-        alert(err.responseText);
+        console.log(err.responseText);
         console.log('Error is: ', err);
       }
     });
   }
+
 })

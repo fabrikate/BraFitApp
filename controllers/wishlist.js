@@ -2,7 +2,7 @@ db = require('../models/index');
 
 
 // wish list
-app.get('/wishlist', function(req, res) {
+app.get('/wishlist', routeMiddleware.ensureLoggedIn, function(req, res) {
   console.log('wishlist user is: ', req.session.id);
   db.User.findById(req.session.id).populate('wishList').exec(function(err, data) {
     console.log('data is: ', data);

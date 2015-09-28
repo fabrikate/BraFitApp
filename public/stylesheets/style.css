@@ -78,6 +78,12 @@ h1, h2, h3 {
   color: #4B1A32;
 }
 
+h4 {
+  font-family: Pacifico, cursive;
+  font-size: 26px;
+  color: #4B1A32;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;
@@ -95,9 +101,25 @@ table {
   border: 3px solid #F0735C;
 }
 
-button {
+.inputSubmit, button {
   background-color: #4B1A32;
   border-radius: 30px;
   color: #F0735C;
   padding: 8px;
+}
+
+ul, li {
+  width: 80%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#img404 {
+  border: 3px solid #F0735C;
+  height: 300px;
+  width: 300px;
+  border-radius: 220px;
+  margin-right: auto;
+  margin-left: auto;
 }
