@@ -45,7 +45,7 @@ app.get('/wishlist/:id/edit', function(req, res) {
 });
 
 app.put('/wishlist/:id', function(req, res) { //TODO: bug, edit creates a new one, not edit an existing id
-  db.wishList.findByIdAndUpdate(req.params.id, {$set: {req.body.bra}}, function(err, bra) {
+  db.wishList.findByIdAndUpdate(req.params.id, {$set: req.body.bra}, function(err, bra) {
     if(err) {
       console.log('Error is: ', err);
     } else {
