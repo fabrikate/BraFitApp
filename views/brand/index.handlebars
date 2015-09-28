@@ -1,14 +1,18 @@
 <h2>Brand Info</h2>
-<p>Update information about the top brands for customers of the site</p>
-<form action='/brandInfo' method='POST'>
-  <label for='brandName'>Brand Name: </label>
-  <select name='brand[brandName]' id='brandName'>
-    <option>Natori</option>
-    <option>Chantelle</option>
-    <option>Wacoal</option>
-    <option>Freya / Fantasie </option>
-  </select>
-  <label for'topStyles'> Top Styles </label>
-  <input type='text' name='brand[popularStyles]' id='topStyles' />
-  <input type='submit' value='submit' />
-</form>
+<p>Which Brands / Styles are the best?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Brand </th>
+      <th>Popular Styles </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr> {{# each brands}}
+      <td>{{brandName}}</td>
+      <td>{{popularStyle}}</td>
+    </tr> {{/each}}
+  </tbody>
+</table>
+
