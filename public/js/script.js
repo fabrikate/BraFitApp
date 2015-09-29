@@ -118,6 +118,7 @@ $(document).ready(function() {
 
   // get Band recommendation via average of answers
   function recommendedBand() {
+    // currentSize = _.compact(currentSize);
     var recBand, avg, sum, err= 'error';
     var givenBand = parseInt(currentSize[0]);
     console.log(givenBand);
