@@ -15,5 +15,5 @@
 - Node JS
 - Express
 
-### Website:
-[BraFitter](http://brafitter.herokuapp.com/)
+### Check it out:
+[Bra Fit App](https://brafitter.herokuapp.com)
